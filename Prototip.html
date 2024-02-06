@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prototip - Joc del Penjat - </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var vides = 7;
+        var correctes = "";
+        function Comprovar () {
+        
+            lletra = document.getElementById("valor").value;
+            // Convertim les majuscules a minúscules
+            lletra = lletra.toLowerCase();
+        
+            switch (lletra) {
+                
+        case "á":
+        case "à":
+            lletra = "a";
+            break;
+        case "é":
+        case "è":
+            lletra = "e";
+           break;
+        case "í":
+        case "ì":
+            lletra = "i";
+           break;
+        case "ó":
+        case "ò":
+            lletra = "o";
+           break;
+        case "ú":
+        case "ù":
+        case "ü":
+            lletra = "u";
+            break;
+            }
+        
+            if ((lletra >= "a") && (lletra <= "m")) { 
+            
+                alert("Ho has fet bé!!!");
+                Lletres = document.getElementById("Lletres").innerHTML;
+                
+                if (correctes == ""){
+                correctes = correctes + lletra;
+                } 
+                else {
+                correctes = correctes + ", " + lletra;
+                }
+                document.getElementById("Lletres").innerHTML = correctes;
+            }
+            else
+            {
+                alert("Has fallat!!");
+                vides = vides - 1;
+                document.getElementById("vida").innerHTML = "&#160;&#160;&#160;&#160;&#160;&#160;&#160;" +vides;
+            }
+        }
+        
+    </script>
+    </head>
+    <body>
+        <body style="background-color:#E8AAF0">  
+        
+        <b><h1>Joc del Penjat</h1></b>
+        
+        <input type="text" placeholder="Pere, escriu en minuscules!" id="valor">
+        <button onclick="Comprovar();">Comprova</button>
+        
+        <h2>Paraula</h2>
+        
+        <p id="Lletres">_ _ _ _ _ _</p>
+        
+        <h2>Vides</h2>
+        
+        <p id="vida"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;7</p>
+        
+        <h2>LLetres</h2>
+        
+        <p> </p>
+  
+    </body>
+</html>
