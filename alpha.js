@@ -44,9 +44,13 @@
                 window.alert("Has encertat!");
                 document.getElementById('miau').play();  
 
-
-                LLetres = LLetres + lletra + ", ";
-                document.getElementById("Lletres").innerHTML = LLetres;
+                if (Lletres == ""){
+                    Lletres = Lletres  + lletra; 
+                }
+                else{
+                    Lletres = Lletres  + ", " + lletra;
+                }
+                document.getElementById("Lletres").innerHTML = Lletres;
 
         }   else if (((lletra >= "n") && (lletra <= "z")) || (lletra == "ñ")) {
                 window.alert("Has fallat");
